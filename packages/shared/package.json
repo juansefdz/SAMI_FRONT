@@ -1,0 +1,23 @@
+{
+  "name": "@sami/shared",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Marca, componentes UI e i18n compartidos entre landing y plataforma",
+  "exports": {
+    "./ui/*": "./src/ui/*.tsx",
+    "./i18n": "./src/i18n/createI18n.tsx",
+    "./brand": "./src/brand.ts",
+    "./styles/theme.css": "./src/styles/theme.css",
+    "./assets/*": "./assets/*"
+  },
+  "peerDependencies": {
+    "react": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "typescript": "^5.8.0"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  }
+}

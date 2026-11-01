@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [development, master, "refactor/**", "feature/**"]
+  pull_request:
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        app: [landing, platform]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: Tipos
+        run: npm run typecheck -w @sami/${{ matrix.app }}
+      - name: Lint
+        run: npm run lint -w @sami/${{ matrix.app }}
+      - name: Build
+        run: npm run build -w @sami/${{ matrix.app }}

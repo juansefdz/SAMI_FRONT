@@ -1,0 +1,33 @@
+/*
+ * Tokens de marca SAMI, compartidos por landing y plataforma.
+ * Las fuentes llegan como variables CSS desde next/font en cada layout.
+ */
+@theme static {
+  --color-brand-50: #fff3f2;
+  --color-brand-100: #ffe3e0;
+  --color-brand-200: #ffc9c3;
+  --color-brand-300: #ff9b90;
+  --color-brand-500: #ec2418;
+  --color-brand-600: #d00000;
+  --color-brand-700: #a6000c;
+  --color-brand-800: #7c0712;
+  --color-brand-900: #4b0a10;
+
+  /* Neutros con un leve sesgo hacia el rojo de marca */
+  --color-ink: #1b1315;
+  --color-ink-soft: #5b4d50;
+  --color-mist: #f8f4f3;
+  --color-blush: #fbe8e5;
+  --color-line: #eadfdd;
+  --color-night: #170b0e;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+}
+
+/* Las fuentes llegan desde next/font como variables en <html>; se resuelven en línea. */
+@theme inline {
+  --font-sans: var(--font-body, var(--font-inter)), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display-face, var(--font-body)), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-data, ui-monospace), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
